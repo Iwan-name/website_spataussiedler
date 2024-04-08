@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def umzug(request):
+    template = 'umzug/umzug.html'
+    return render(request, template)

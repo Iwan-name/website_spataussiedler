@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
     'unterlagen.apps.UnterlagenConfig',
     'prufung.apps.PrufungConfig',
+    'umzug.apps.UmzugConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
