@@ -23,5 +23,5 @@ urlpatterns = [
     path('unterlagen', include('unterlagen.urls')),
     path('prufung', include('prufung.urls')),
     path('umzug', include('umzug.urls')),
-
+    path('kontakte', include('kontakte.urls')),
 ]

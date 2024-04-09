@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% block title %} Контакты {% endblock %}
+
+{% block content %}
+<body>
+{% load static %}
+<div class="container pt-5">
+    <div class="row justify-content-between">
+        <div class="col">
+            {% include 'includes/hauptaufschrift.html' %}
+        </div>
+        {% include 'includes/abzeichen.html' %}
+    </div>
+</div>
+{% include 'includes/nav.html' %}
+<!-- END nav -->
+
+<section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/kontakte.jpg' %});"
+         data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/">Home <i
+                        class="ion-ios-arrow-forward"></i></a></span> <span>Контакты <i
+                        class="ion-ios-arrow-forward"></i></span></p>
+                <h1 class="mb-0 bread">Свяжись с нами</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="wrapper">
+                    <div class="row no-gutters mb-5">
+<!--                        <div class="col-md-7">-->
+                            <div class="contact-wrap w-100 p-md-5 p-4">
+                                <h3 class="mb-4">Свяжись с нами</h3>
+                                <div id="form-message-warning" class="mb-4"></div>
+                                <div id="form-message-success" class="mb-4">
+                                    Отправте ваше сообщение, спасибо!
+                                </div>
+                                <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="label" for="name">Введите имя</label>
+                                                <input type="text" class="form-control" name="name" id="name"
+                                                       placeholder="Имя">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="label" for="email">Введите Email</label>
+                                                <input type="email" class="form-control" name="email" id="email"
+                                                       placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="label" for="subject">Введите тему сообщения</label>
+                                                <input type="text" class="form-control" name="subject" id="subject"
+                                                       placeholder="Тема">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="label" for="#">Текст сообщения</label>
+                                                <textarea name="message" class="form-control" id="message" cols="30"
+                                                          rows="4" placeholder="Текст"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="submit" value="Отправить сообщение" class="btn btn-primary">
+                                                <div class="submitting"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+<!--                        </div>-->
+<!--                        <div class="col-md-5 d-flex align-items-stretch">-->
+<!--                            <div id="map">-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="dbox w-100 text-center">
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <span class="fa fa-map-marker"></span>
+                                </div>
+                                <div class="text">
+                                    <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="dbox w-100 text-center">
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <span class="fa fa-phone"></span>
+                                </div>
+                                <div class="text">
+                                    <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="dbox w-100 text-center">
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <span class="fa fa-paper-plane"></span>
+                                </div>
+                                <div class="text">
+                                    <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="dbox w-100 text-center">
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <span class="fa fa-globe"></span>
+                                </div>
+                                <div class="text">
+                                    <p><span>Website</span> <a href="#">yoursite.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'includes/footer.html' %}
+
+
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen">
+    <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00"/>
+    </svg>
+</div>
+
+{% include 'includes/scripts.html' %}
+
+</body>
+{% endblock %}
