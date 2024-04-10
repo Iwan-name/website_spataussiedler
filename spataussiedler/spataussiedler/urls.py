@@ -24,4 +24,6 @@ urlpatterns = [
     path('prufung', include('prufung.urls')),
     path('umzug', include('umzug.urls')),
     path('kontakte', include('kontakte.urls')),
+    path('interessante', include('interessante.urls')),
+    path('auth/', include('users.urls')),
 ]

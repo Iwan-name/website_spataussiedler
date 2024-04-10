@@ -7,22 +7,21 @@
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fa fa-bars"></span> Меню
         </button>
-        <!--				<form action="#" class="searchform order-lg-last">-->
-        <!--          <div class="form-group d-flex">-->
-        <!--            <input type="text" class="form-control pl-3" placeholder="Search">-->
-        <!--            <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>-->
-        <!--          </div>-->
-        <!--        </form>-->
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item "><a href="/" class="nav-link">Домашняя страница</a></li>
-                <li class="nav-item active"><a href="unterlagen" class="nav-link">Документы</a></li>
-                <li class="nav-item"><a href="prufung" class="nav-link">Экзамены по немецкому</a></li>
-                <li class="nav-item"><a href="umzug" class="nav-link">Переезд</a></li>
-                <!--	        	<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>-->
-                <li class="nav-item"><a href="kontakte" class="nav-link">Контакты</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Вход</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Регистрация</a></li>
+                <li class="nav-item"><a href="{% url 'index' %}" class="nav-link">Домашняя страница</a></li>
+                <li class="nav-item"><a href="{% url 'unterlagen' %}" class="nav-link">Документы</a></li>
+                <li class="nav-item"><a href="{% url 'prufung' %}" class="nav-link">Экзамены по немецкому</a></li>
+                <li class="nav-item"><a href="{% url 'umzug' %}" class="nav-link">Переезд</a></li>
+                <li class="nav-item"><a href="{% url 'interessante' %}" class="nav-link">Интересные места</a></li>
+                <li class="nav-item"><a href="{% url 'kontakte' %}" class="nav-link">Контакты</a></li>
+                {% if request.user.is_authenticated %}
+                <li class="nav-item"><a href="#" class="nav-link">Выход</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">{{user.first_name}}</a></li>
+                {% else %}
+                <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Вход</a></li>
+                <li class="nav-item"><a href="{% url 'signup' %}" class="nav-link">Регистрация</a></li>
+                {% endif %}
             </ul>
         </div>
     </div>

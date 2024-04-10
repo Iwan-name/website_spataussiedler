@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'unterlagen.apps.UnterlagenConfig',
     'prufung.apps.PrufungConfig',
     'kontakte.apps.KontakteConfig',
+    'interessante.apps.InteressanteConfig',
     'umzug.apps.UmzugConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
