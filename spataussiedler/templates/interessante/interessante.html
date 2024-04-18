@@ -30,7 +30,65 @@
         </div>
     </div>
 </section>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="wrapper">
+                    <div class="row no-gutters mb-5">
 
+                        <div class="contact-wrap w-100 p-md-5 p-4">
+                            <h3 class="mb-4">Свяжись с нами</h3>
+                            <div id="form-message-warning" class="mb-4"></div>
+                            <div id="form-message-success" class="mb-4">
+                                Отправте ваше сообщение, спасибо!
+                            </div>
+                            <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="label" for="name">Введите имя</label>
+                                            <input type="text" class="form-control" name="name" id="name"
+                                                   placeholder="Имя">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="label" for="email">Введите Email</label>
+                                            <input type="email" class="form-control" name="email" id="email"
+                                                   placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="label" for="subject">Введите тему сообщения</label>
+                                            <input type="text" class="form-control" name="subject" id="subject"
+                                                   placeholder="Тема">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="label" for="#">Текст сообщения</label>
+                                            <textarea name="message" class="form-control" id="message" cols="30"
+                                                      rows="4" placeholder="Текст"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="submit" value="Отправить сообщение" class="btn btn-primary">
+                                            <div class="submitting"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="ftco-section">
     <div class="container">
         <div class="row d-flex">
@@ -39,6 +97,7 @@
                     <a href="blog-single.html" class="block-20 rounded"
                        style="background-image: url({% static 'images/image_1.jpg' %});">
                     </a>
+
                     <div class="text mt-3 text-center">
                         <div class="meta mb-2">
                             <div><a href="#">January 30, 2020</a></div>

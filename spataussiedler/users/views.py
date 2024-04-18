@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout, authenticate, login
-from .forms import SignUpForm, LoginUserForm
+from .forms import LoginForm, SignUpForm
 
 
 def signup(request):
@@ -39,9 +39,9 @@ def user_login(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('index')
+            return redirect('homepage/index.html')
         else:
-            return render(request, 'login.html', {'error': 'Неверные учетные данные'})
+            return render(request, 'users/login.html', {'error': 'Неверные учетные данные'})
 
     else:
         return render(request, template, context)

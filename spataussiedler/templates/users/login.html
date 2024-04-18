@@ -43,8 +43,11 @@
                             <div id="form-message-warning" class="mb-4"></div>
                             <div id="form-message-success" class="mb-4">
                                 Войди в учетную запись
+
                             </div>
+                            {% csrf_token %}
                             <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                {% csrf_token %}
                                 <div class="row">
 
 
