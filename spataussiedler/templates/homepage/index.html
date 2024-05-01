@@ -80,32 +80,32 @@
 <section class="ftco-section ftco-no-pt ftco-no-pb">
     <div class="container">
         <div class="row d-flex no-gutters">
-                <div class="row justify-content-start py-5">
-                    <div class="col-md-12 heading-section ftco-animate pl-md-4 py-md-4">
-                        <span class="subheading">Добро пожаловать на сайт</span>
-                        <h2 class="mb-4">Это портал создан для людей которые хотят переехать в Германию как поздие
-                            переселенци, или просто хотят переехать в Германию, или хотят помочь с переездом, или просто
-                            интересна эта тема </h2>
-                        <div class="tabulation-2 mt-4">
-                            <ul class="nav nav-pills nav-fill d-md-flex d-block">
-                                <li class="nav-item mb-md-0 mb-2">
-                                    <a class="nav-link active py-2" data-toggle="tab" href="#home1">Наша миссия</a>
-                                </li>
-                                <li class="nav-item px-lg-2 mb-md-0 mb-2">
-                                    <a class="nav-link py-2" data-toggle="tab" href="#home2">Ваша миссия</a>
-                                </li>
-                            </ul>
-                            <div class="tab-content bg-light rounded mt-2">
-                                <div class="tab-pane container p-0 active" id="home1">
-                                    <p>Здесь будет текст о нашей мисси</p>
-                                </div>
-                                <div class="tab-pane container p-0 fade" id="home2">
-                                    <p>Здесь будет текст о вашей мисси</p>
-                                </div>
+            <div class="row justify-content-start py-5">
+                <div class="col-md-12 heading-section ftco-animate pl-md-4 py-md-4">
+                    <span class="subheading">Добро пожаловать на сайт</span>
+                    <h2 class="mb-4">Это портал создан для людей которые хотят переехать в Германию как поздие
+                        переселенци, или просто хотят переехать в Германию, или хотят помочь с переездом, или просто
+                        интересна эта тема </h2>
+                    <div class="tabulation-2 mt-4">
+                        <ul class="nav nav-pills nav-fill d-md-flex d-block">
+                            <li class="nav-item mb-md-0 mb-2">
+                                <a class="nav-link active py-2" data-toggle="tab" href="#home1">Наша миссия</a>
+                            </li>
+                            <li class="nav-item px-lg-2 mb-md-0 mb-2">
+                                <a class="nav-link py-2" data-toggle="tab" href="#home2">Ваша миссия</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content bg-light rounded mt-2">
+                            <div class="tab-pane container p-0 active" id="home1">
+                                <p>Здесь будет текст о нашей мисси</p>
+                            </div>
+                            <div class="tab-pane container p-0 fade" id="home2">
+                                <p>Здесь будет текст о вашей мисси</p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 </section>
@@ -320,59 +320,61 @@
     <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
             <div class="col-md-7 heading-section text-center ftco-animate">
-                <span class="subheading">Наши записи</span>
-                <h2>Последние записи</h2>
+                <span class="subheading">Интересные места</span>
+                <h2>Последние публикации</h2>
             </div>
         </div>
         <div class="row d-flex">
+            {% for ort in orte %}
             <div class="col-md-4 d-flex ftco-animate">
                 <div class="blog-entry align-self-stretch">
                     <a href="blog-single.html" class="block-20 rounded"
-                       style="background-image: url({% static 'images/image_1.jpg' %});">
+                       style="background-image: url({{ ort.bild.url }});">
                     </a>
+
                     <div class="text mt-3 text-center">
                         <div class="meta mb-2">
                             <div><a href="#">January 30, 2020</a></div>
-                            <div><a href="#">Admin</a></div>
+                            <div><a href="#">{{ ort.autor.get_full_name }}</a></div>
                             <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                         </div>
-                        <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind
-                            texts</a></h3>
+                        <h3 class="heading"><a href="#">{{ ort.name }}</a></h3>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 d-flex ftco-animate">
-                <div class="blog-entry align-self-stretch">
-                    <a href="blog-single.html" class="block-20 rounded"
-                       style="background-image: url({% static 'images/image_2.jpg' %});">
-                    </a>
-                    <div class="text mt-3 text-center">
-                        <div class="meta mb-2">
-                            <div><a href="#">January 30, 2020</a></div>
-                            <div><a href="#">Admin</a></div>
-                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                        </div>
-                        <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind
-                            texts</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex ftco-animate">
-                <div class="blog-entry align-self-stretch">
-                    <a href="blog-single.html" class="block-20 rounded"
-                       style="background-image: url({% static 'images/image_3.jpg' %});">
-                    </a>
-                    <div class="text mt-3 text-center">
-                        <div class="meta mb-2">
-                            <div><a href="#">January 30, 2020</a></div>
-                            <div><a href="#">Admin</a></div>
-                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                        </div>
-                        <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind
-                            texts</a></h3>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
+            <!--            <div class="col-md-4 d-flex ftco-animate">-->
+            <!--                <div class="blog-entry align-self-stretch">-->
+            <!--                    <a href="blog-single.html" class="block-20 rounded"-->
+            <!--                       style="background-image: url({% static 'images/image_2.jpg' %});">-->
+            <!--                    </a>-->
+            <!--                    <div class="text mt-3 text-center">-->
+            <!--                        <div class="meta mb-2">-->
+            <!--                            <div><a href="#">January 30, 2020</a></div>-->
+            <!--                            <div><a href="#">Admin</a></div>-->
+            <!--                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>-->
+            <!--                        </div>-->
+            <!--                        <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind-->
+            <!--                            texts</a></h3>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--            <div class="col-md-4 d-flex ftco-animate">-->
+            <!--                <div class="blog-entry align-self-stretch">-->
+            <!--                    <a href="blog-single.html" class="block-20 rounded"-->
+            <!--                       style="background-image: url({% static 'images/image_3.jpg' %});">-->
+            <!--                    </a>-->
+            <!--                    <div class="text mt-3 text-center">-->
+            <!--                        <div class="meta mb-2">-->
+            <!--                            <div><a href="#">January 30, 2020</a></div>-->
+            <!--                            <div><a href="#">Admin</a></div>-->
+            <!--                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>-->
+            <!--                        </div>-->
+            <!--                        <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind-->
+            <!--                            texts</a></h3>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
         </div>
     </div>
 </section>
