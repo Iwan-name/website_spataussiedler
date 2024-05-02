@@ -115,91 +115,66 @@
         <div class="row no-gutters">
             <div class="col-md-4 ftco-animate">
                 <div class="work img d-flex align-items-end"
-                     style="background-image: url({% static 'images/work-1.jpg' %});">
-                    <a href="images/work-1.jpg"
-                       class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="icon-expand"></span>
-                    </a>
+                     style="background-image:url({% static 'images/bg_1_1.jpg' %})">
                     <div class="desc w-100 px-4">
                         <div class="text w-100 mb-3">
-                            <span>Building</span>
-                            <h2><a href="work-single.html">College Health Profession</a></h2>
+                            <span><a href="{% url 'unterlagen' %}">Документы</a></span>
+                            <h2><a href="{% url 'unterlagen' %}">Какие документы нужны для переезда</a></h2>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 ftco-animate">
                 <div class="work img d-flex align-items-end"
-                     style="background-image: url({% static 'images/work-2.jpg' %});">
-                    <a href="images/work-2.jpg"
-                       class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="icon-expand"></span>
-                    </a>
+                     style="background-image:url({% static 'images/bg_2_1.jpg' %});">
                     <div class="desc w-100 px-4">
                         <div class="text w-100 mb-3">
-                            <span>Building</span>
-                            <h2><a href="work-single.html">College Health Profession</a></h2>
+                            <span><a href="{% url 'prufung' %}">Экзамен</a></span>
+                            <h2><a href="{% url 'prufung' %}">Что и как нужно сдавать</a></h2>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 ftco-animate">
                 <div class="work img d-flex align-items-end"
-                     style="background-image: url({% static 'images/work-3.jpg' %});">
-                    <a href="images/work-3.jpg"
-                       class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="icon-expand"></span>
-                    </a>
+                     style="background-image:url({% static 'images/bg_3_1.jpg' %});">
                     <div class="desc w-100 px-4">
                         <div class="text w-100 mb-3">
-                            <span>Building</span>
-                            <h2><a href="work-single.html">College Health Profession</a></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 ftco-animate">
-                <div class="work img d-flex align-items-end"
-                     style="background-image: url({% static 'images/work-4.jpg' %});">
-                    <a href="images/work-4.jpg"
-                       class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="icon-expand"></span>
-                    </a>
-                    <div class="desc w-100 px-4">
-                        <div class="text w-100 mb-3">
-                            <span>Building</span>
-                            <h2><a href="work-single.html">College Health Profession</a></h2>
+                            <span><a href="{% url 'umzug' %}">Переезд</a></span>
+                            <h2><a href="{% url 'umzug' %}">Советы при переезде</a></h2>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 ftco-animate">
                 <div class="work img d-flex align-items-end"
-                     style="background-image: url({% static 'images/work-5.jpg' %});">
-                    <a href="images/work-5.jpg"
-                       class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="icon-expand"></span>
-                    </a>
+                     style="background-image:url({% static 'images/bg_4.jpg' %});">
                     <div class="desc w-100 px-4">
                         <div class="text w-100 mb-3">
-                            <span>Building</span>
-                            <h2><a href="work-single.html">College Health Profession</a></h2>
+                            <span><a href="{% url 'umzug' %}">Прибытие</a></span>
+                            <h2><a href="{% url 'umzug' %}">Куда обратиться?</a></h2>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 ftco-animate">
                 <div class="work img d-flex align-items-end"
-                     style="background-image: url({% static 'images/work-6.jpg' %});">
-                    <a href="images/work-6.jpg"
-                       class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="icon-expand"></span>
-                    </a>
+                     style="background-image:url({% static 'images/bg_5.jpg' %});">
                     <div class="desc w-100 px-4">
                         <div class="text w-100 mb-3">
-                            <span>Building</span>
-                            <h2><a href="work-single.html">College Health Profession</a></h2>
+                            <span><a href="{% url 'interessante' %}">Интесеные места</a></span>
+                            <h2><a href="{% url 'interessante' %}">Что посетить в свободное время</a></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 ftco-animate">
+                <div class="work img d-flex align-items-end"
+                     style="background-image: url({% static 'images/kontakte.jpg' %});">
+                    <div class="desc w-100 px-4">
+                        <div class="text w-100 mb-3">
+                            <span><a href="{% url 'kontakte' %}">Контакты</a></span>
+                            <h2><a href="{% url 'kontakte' %}">Напиши нам</a></h2>
                         </div>
                     </div>
                 </div>
@@ -335,46 +310,14 @@
                     <div class="text mt-3 text-center">
                         <div class="meta mb-2">
                             <div><a href="#">January 30, 2020</a></div>
-                            <div><a href="#">{{ ort.autor.get_full_name }}</a></div>
-                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                            <div><a href="#">{{ ort.autor }}</a></div>
+<!--                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>-->
                         </div>
                         <h3 class="heading"><a href="#">{{ ort.name }}</a></h3>
                     </div>
                 </div>
             </div>
             {% endfor %}
-            <!--            <div class="col-md-4 d-flex ftco-animate">-->
-            <!--                <div class="blog-entry align-self-stretch">-->
-            <!--                    <a href="blog-single.html" class="block-20 rounded"-->
-            <!--                       style="background-image: url({% static 'images/image_2.jpg' %});">-->
-            <!--                    </a>-->
-            <!--                    <div class="text mt-3 text-center">-->
-            <!--                        <div class="meta mb-2">-->
-            <!--                            <div><a href="#">January 30, 2020</a></div>-->
-            <!--                            <div><a href="#">Admin</a></div>-->
-            <!--                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>-->
-            <!--                        </div>-->
-            <!--                        <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind-->
-            <!--                            texts</a></h3>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--            </div>-->
-            <!--            <div class="col-md-4 d-flex ftco-animate">-->
-            <!--                <div class="blog-entry align-self-stretch">-->
-            <!--                    <a href="blog-single.html" class="block-20 rounded"-->
-            <!--                       style="background-image: url({% static 'images/image_3.jpg' %});">-->
-            <!--                    </a>-->
-            <!--                    <div class="text mt-3 text-center">-->
-            <!--                        <div class="meta mb-2">-->
-            <!--                            <div><a href="#">January 30, 2020</a></div>-->
-            <!--                            <div><a href="#">Admin</a></div>-->
-            <!--                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>-->
-            <!--                        </div>-->
-            <!--                        <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind-->
-            <!--                            texts</a></h3>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--            </div>-->
         </div>
     </div>
 </section>

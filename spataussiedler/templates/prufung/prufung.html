@@ -25,7 +25,7 @@
                 <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/">Домашняя страница <i
                         class="ion-ios-arrow-forward"></i></a></span> <span>Экзамен <i
                         class="ion-ios-arrow-forward"></i></span></p>
-                <h1 class="mb-0 bread">Экзамен</h1>
+                <h1 class="mb-0 bread">Оставь пост с информацией по подготовке и сдачи экзамена</h1>
             </div>
         </div>
     </div>
@@ -38,87 +38,6 @@
                 <div class="blog-entry align-self-stretch">
                     <a href="blog-single.html" class="block-20 rounded"
                        style="background-image: url({% static 'images/image_1.jpg' %});">
-                    </a>
-                    <div class="text mt-3 text-center">
-                        <div class="meta mb-2">
-                            <div><a href="#">January 30, 2020</a></div>
-                            <div><a href="#">Admin</a></div>
-                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                        </div>
-                        <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind
-                            texts</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex ftco-animate">
-                <div class="blog-entry align-self-stretch">
-                    <a href="blog-single.html" class="block-20 rounded"
-                       style="background-image: url({% static 'images/image_2.jpg' %});">
-                    </a>
-                    <div class="text mt-3 text-center">
-                        <div class="meta mb-2">
-                            <div><a href="#">January 30, 2020</a></div>
-                            <div><a href="#">Admin</a></div>
-                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                        </div>
-                        <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind
-                            texts</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex ftco-animate">
-                <div class="blog-entry align-self-stretch">
-                    <a href="blog-single.html" class="block-20 rounded"
-                       style="background-image: url({% static 'images/image_3.jpg' %});">
-                    </a>
-                    <div class="text mt-3 text-center">
-                        <div class="meta mb-2">
-                            <div><a href="#">January 30, 2020</a></div>
-                            <div><a href="#">Admin</a></div>
-                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                        </div>
-                        <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind
-                            texts</a></h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 d-flex ftco-animate">
-                <div class="blog-entry align-self-stretch">
-                    <a href="blog-single.html" class="block-20 rounded"
-                       style="background-image: url({% static 'images/image_4.jpg' %});">
-                    </a>
-                    <div class="text mt-3 text-center">
-                        <div class="meta mb-2">
-                            <div><a href="#">January 30, 2020</a></div>
-                            <div><a href="#">Admin</a></div>
-                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                        </div>
-                        <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind
-                            texts</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex ftco-animate">
-                <div class="blog-entry align-self-stretch">
-                    <a href="blog-single.html" class="block-20 rounded"
-                       style="background-image: url({% static 'images/image_5.jpg' %});">
-                    </a>
-                    <div class="text mt-3 text-center">
-                        <div class="meta mb-2">
-                            <div><a href="#">January 30, 2020</a></div>
-                            <div><a href="#">Admin</a></div>
-                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                        </div>
-                        <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind
-                            texts</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex ftco-animate">
-                <div class="blog-entry align-self-stretch">
-                    <a href="blog-single.html" class="block-20 rounded"
-                       style="background-image: url({% static 'images/image_6.jpg' %});">
                     </a>
                     <div class="text mt-3 text-center">
                         <div class="meta mb-2">
@@ -150,7 +69,61 @@
         </div>
     </div>
 </section>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="wrapper">
+                    <div class="row no-gutters mb-5">
 
+                        <div class="contact-wrap w-100 p-md-5 p-4">
+                            <h3 class="mb-4">Поделись своим опытам сдачи экзамена</h3>
+                            <div id="form-message-warning" class="mb-4"></div>
+                            <div id="form-message-success" class="mb-4">
+                                Опиши, какой сдавал экзамен и как, спасибо!
+                            </div>
+                            <form method="POST" id="contactForm" name="contactForm" class="contactForm"
+                                  enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="label" for="id_name">Како уровень экзамена?</label>
+                                            <input type="text" class="form-control" name="name" id="id_name"
+                                                   placeholder="А1-С2">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="label" for="id_beschreibung">Опиши как учил или как сдавал</label>
+                                            <textarea name="beschreibung" class="form-control" id="id_beschreibung"
+                                                      cols="30"
+                                                      rows="4" placeholder="Текст описания"></textarea>
+                                        </div>
+                                    </div>
+                                     <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="label" for="id_file">Загрузи фото или файл</label>
+                                            <input type="file"  name="file" id="id_file"
+                                                   placeholder="Фото или файл">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="submit" value="Опубликовать" class="btn btn-primary">
+                                            <div class="submitting"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% include 'includes/footer.html' %}
 
 <!-- loader -->
