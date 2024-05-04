@@ -45,46 +45,49 @@
                                 Зарегистрируйся
                             </div>
                             <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                {% csrf_token %}
+<!--                                {{ form.as_p }}-->
+<!--                                <input type="submit" value="Register" />-->
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="label" for="name">Введите имя</label>
-                                            <input type="text" class="form-control" name="name" id="name"
+                                            <label class="label" for="id_first_name">Введите имя</label>
+                                            <input type="text" class="form-control" name="first_name" id="id_first_name"
                                                    placeholder="Имя">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="label" for="name2">Введите Фамилию</label>
-                                            <input type="text" class="form-control" name="name" id="name2"
+                                            <label class="label" for="id_last_name">Введите Фамилию</label>
+                                            <input type="text" class="form-control" name="last_name" id="id_last_name"
                                                    placeholder="Фамилия">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="label" for="username">Введите Nik</label>
-                                            <input type="text" class="form-control" name="name" id="username"
+                                            <label class="label" for="id_username">Введите Nik</label>
+                                            <input type="text" class="form-control" name="username" id="id_username"
                                                    placeholder="Nik">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="label" for="email">Введите Email</label>
-                                            <input type="email" class="form-control" name="email" id="email"
+                                            <label class="label" for="id_email">Введите Email</label>
+                                            <input type="email" class="form-control" name="email" id="id_email"
                                                    placeholder="Email">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="label" for="password1">Введите Пароль</label>
-                                            <input type="password" class="form-control" name="name" id="password1"
+                                            <label class="label" for="id_password1">Введите Пароль</label>
+                                            <input type="password" class="form-control" name="password1" id="id_password1"
                                                    placeholder="Пароль">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="label" for="password2">Повтори Пароль</label>
-                                            <input type="password" class="form-control" name="name" id="password2"
+                                            <label class="label" for="id_password2">Повтори Пароль</label>
+                                            <input type="password" class="form-control" name="password2" id="id_password2"
                                                    placeholder="Пароль">
                                         </div>
                                     </div>

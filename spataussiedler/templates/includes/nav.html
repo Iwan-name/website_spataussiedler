@@ -16,7 +16,7 @@
                 <li class="nav-item"><a href="{% url 'interessante' %}" class="nav-link">Интересные места</a></li>
                 <li class="nav-item"><a href="{% url 'kontakte' %}" class="nav-link">Контакты</a></li>
                 {% if request.user.is_authenticated %}
-                <li class="nav-item"><a href="#" class="nav-link">Выход</a></li>
+                <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Выход</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">{{ user }}</a></li>
                 {% else %}
                 <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Вход</a></li>

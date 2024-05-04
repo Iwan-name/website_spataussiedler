@@ -82,7 +82,7 @@
                             <div id="form-message-success" class="mb-4">
                                 Опиши что и как Ты делал, спасибо!
                             </div>
-                            <form method="POST" id="contactForm" name="contactForm" class="contactForm"
+                            <form method="POST" action="{% url 'unterlagen' %}" id="contactForm" name="contactForm" class="contactForm"
                                   enctype="multipart/form-data">
                                 {% csrf_token %}
                                 <div class="row">

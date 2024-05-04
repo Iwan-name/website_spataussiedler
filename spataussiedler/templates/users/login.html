@@ -43,18 +43,15 @@
                             <div id="form-message-warning" class="mb-4"></div>
                             <div id="form-message-success" class="mb-4">
                                 Войди в учетную запись
-
                             </div>
                             {% csrf_token %}
                             <form method="POST" id="contactForm" name="contactForm" class="contactForm">
                                 {% csrf_token %}
                                 <div class="row">
-
-
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="label" for="username">Введите Nik</label>
-                                            <input type="text" class="form-control" name="name" id="username"
+                                            <input type="text" class="form-control" name="username" id="username"
                                                    placeholder="Nik">
                                         </div>
                                     </div>
@@ -62,7 +59,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="label" for="password">Введите Пароль</label>
-                                            <input type="password" class="form-control" name="name" id="password"
+                                            <input type="password" class="form-control" name="password" id="password"
                                                    placeholder="Пароль">
                                         </div>
                                     </div>

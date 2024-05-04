@@ -34,22 +34,24 @@
 <section class="ftco-section">
     <div class="container">
         <div class="row d-flex">
+            {% for examen in examens %}
             <div class="col-md-4 d-flex ftco-animate">
                 <div class="blog-entry align-self-stretch">
                     <a href="blog-single.html" class="block-20 rounded"
-                       style="background-image: url({% static 'images/image_1.jpg' %});">
+                       style="background-image: url({{ examen.bild.url }}); alt="Голова и туловище"">
                     </a>
+
                     <div class="text mt-3 text-center">
                         <div class="meta mb-2">
-                            <div><a href="#">January 30, 2020</a></div>
-                            <div><a href="#">Admin</a></div>
+                            <div><a href="#">{{ examen.pub_date }}</a></div>
+                            <div><a href="#">{{ examen.autor }}</a></div>
                             <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                         </div>
-                        <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind
-                            texts</a></h3>
+                        <h3 class="heading"><a href="#">{{ examen.name }}</a></h3>
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
 
         <div class="row mt-5">
@@ -95,16 +97,17 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label class="label" for="id_beschreibung">Опиши как учил или как сдавал</label>
+                                            <label class="label" for="id_beschreibung">Опиши как учил или как
+                                                сдавал</label>
                                             <textarea name="beschreibung" class="form-control" id="id_beschreibung"
                                                       cols="30"
                                                       rows="4" placeholder="Текст описания"></textarea>
                                         </div>
                                     </div>
-                                     <div class="col-md-12">
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="label" for="id_file">Загрузи фото или файл</label>
-                                            <input type="file"  name="file" id="id_file"
+                                            <input type="file" name="file" id="id_file"
                                                    placeholder="Фото или файл">
                                         </div>
                                     </div>

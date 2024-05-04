@@ -11,7 +11,7 @@ def prufung(request):
         'examens': examens,
         'form': form
     }
-    if request.metod == 'POST':
+    if request.method == 'POST':
         if form.is_valid():
             pruf = form.save(commit=False)
             pruf.autor = request.user
