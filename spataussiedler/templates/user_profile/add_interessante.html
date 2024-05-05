@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block title %} Интересные места пост {% endblock %}
+
+{% block content %}
+<body>
+{% load static %}
+<div class="container pt-5">
+    <div class="row justify-content-between">
+        <div class="col">
+            {% include 'includes/hauptaufschrift.html' %}
+        </div>
+        {% include 'includes/abzeichen.html' %}
+    </div>
+</div>
+{% include 'includes/nav.html' %}
+<!-- END nav -->
+
+<section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/unterlagen.jpg' %});"
+         data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/">Домашняя страница <i
+                        class="ion-ios-arrow-forward"></i></a></span> <span>Интересные места в Германии <i
+                        class="ion-ios-arrow-forward"></i></span></p>
+                <h1 class="mb-0 bread">Расскажи где побывал в Германии или хотел побывать</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="wrapper">
+                    <div class="row no-gutters mb-5">
+
+                        <div class="contact-wrap w-100 p-md-5 p-4">
+                            <h3 class="mb-4">Поделись своим путешествием!</h3>
+                            <div id="form-message-warning" class="mb-4"></div>
+                            <div id="form-message-success" class="mb-4">
+                                Опиши интересное место, спасибо!
+                            </div>
+                            <form method="POST" id="contactForm" name="contactForm" class="contactForm"
+                                  enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="label" for="id_name">Веди название</label>
+                                            <input type="text" class="form-control" name="name" id="id_name"
+                                                   placeholder="Название">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="label" for="id_ortung">Город или локация</label>
+                                            <input type="text" class="form-control" name="ortung" id="id_ortung"
+                                                   placeholder="Локация">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="label" for="id_beschreibung">Опиши это прекрасное
+                                                место</label>
+                                            <textarea name="beschreibung" class="form-control" id="id_beschreibung"
+                                                      cols="30"
+                                                      rows="4" placeholder="Текст описания"></textarea>
+                                        </div>
+                                    </div>
+                                     <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="label" for="id_bild">Загрузи фото</label>
+                                            <input type="file"  name="bild" id="id_bild"
+                                                   placeholder="Фото">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="submit" value="Отправить сообщение" class="btn btn-primary">
+                                            <div class="submitting"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% include 'includes/footer.html' %}
+
+
+<!-- loader -->
+{% include 'includes/loader.html' %}
+
+{% include 'includes/scripts.html' %}
+
+</body>
+{% endblock %}

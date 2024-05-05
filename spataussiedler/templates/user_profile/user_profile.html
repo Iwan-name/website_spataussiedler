@@ -1,0 +1,143 @@
+<!-- Шаблон Профиля посетителя -->
+{% extends 'base.html' %}
+
+{% block title %} Ваш профиль {% endblock %}
+
+{% block content %}
+<body>
+{% load static %}
+<div class="container pt-5">
+    <div class="row justify-content-between">
+        <div class="col">
+            {% include 'includes/hauptaufschrift.html' %}
+        </div>
+        {% include 'includes/abzeichen.html' %}
+    </div>
+</div>
+{% include 'includes/nav.html' %}
+<!-- END nav -->
+
+<section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/prof.jpg' %});"
+         data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/">Домашняя страница <i
+                        class="ion-ios-arrow-forward"></i></a></span> <span>Ваш профиль <i
+                        class="ion-ios-arrow-forward"></i></span></p>
+                {% if request.user.is_authenticated %}
+                <h1 class="mb-0 bread">Это ваш профиль {{ user }}</h1>
+                {% else %}
+                <h1 class="mb-0 bread">Надо зарегистрироваться {{ user }}</h1>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+    <div class="container">
+        <div class="row d-flex no-gutters">
+            <div class="col-md-6 d-flex">
+            </div>
+            <div class="col-md-12 pl-md-5">
+                <div class="row justify-content-start py-5">
+                    <div class="col-md-12 heading-section ftco-animate pl-md-4 py-md-4">
+                        <span class="subheading">Добро пожаловать в свой профиль</span>
+                        <h2 class="mb-4">Поделись своим опытам и эмоциями</h2>
+                        <p>Добавь пост, который поможет другим людям</p>
+                        <div class="tabulation-2 mt-4">
+                            <ul class="nav nav-pills nav-fill d-md-flex d-block">
+
+                                <li class="nav-item ">
+                                    <a class="nav-link active py-2" data-toggle="tab" href="#home1">Документы</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link py-2 mb-md-0 mb-2" data-toggle="tab" href="#home2">Экзамен</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link py-2" data-toggle="tab" href="#home3">Переезд</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link py-2 mb-md-0 mb-2" data-toggle="tab" href="#home4">Интересные места</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content bg-light rounded mt-2">
+                                <div class="tab-pane container p-0 active" id="home1">
+                                    <p>Здесь вы можете оставить пост о том как вы делали документы,
+                                        какие документы вы делали, в какие инстанции обращались.<br>
+                                        <a href="{% url 'add_unterlagen' %}" class="nav-link">Создать пост</a></p>
+                                </div>
+                                <div class="tab-pane container p-0 fade" id="home2">
+                                    <p>Здесь вы можете оставить пост о том как вы сдавали экзамен, какой уровень,
+                                        как подготавливались, всякую полезную информацию.<br>
+                                        <a href="{% url 'add_prufung' %}" class="nav-link">Создать пост</a></p>
+                                </div>
+                                <div class="tab-pane container p-0 fade" id="home3">
+                                    <p>Здесь вы можете оставить пост о том как вы переезжали в Германию, на чем,
+                                        куда обращались по приезду.<br>
+                                        <a href="{% url 'add_umzug' %}" class="nav-link">Создать пост</a></p>
+                                </div>
+                                <div class="tab-pane container p-0 fade" id="home4">
+                                    <p>Здесь вы можете оставить пост о том какие необычные места
+                                        можно посетить в Германии.<br>
+                                        <a href="{% url 'add_interessante' %}" class="nav-link">Создать пост</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section">
+    <div class="container">
+        <h2 class="mb-4">Ваши посты: </h2>
+        <div class="row d-flex">
+            {% for examen in examens %}
+            <div class="col-md-4 d-flex ftco-animate">
+                <div class="blog-entry align-self-stretch">
+                    <a href="blog-single.html" class="block-20 rounded"
+                       style="background-image: url({{ examen.bild.url }});">
+                    </a>
+                    <div class="text mt-3 text-center">
+                        <div class="meta mb-2">
+                            <div><a href="#">{{ examen.pub_date }}</a></div>
+                            <div><a href="#">{{ examen.autor }}</a></div>
+                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                        </div>
+                        <h3 class="heading"><a href="#">{{ examen.name }}</a></h3>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="row mt-5">
+            <div class="col text-center">
+                <div class="block-27">
+                    <ul>
+                        <li><a href="#">&lt;</a></li>
+                        <li class="active"><span>1</span></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&gt;</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'includes/footer.html' %}
+
+<!-- loader -->
+{% include 'includes/loader.html' %}
+
+{% include 'includes/scripts.html' %}
+
+</body>
+{% endblock %}
