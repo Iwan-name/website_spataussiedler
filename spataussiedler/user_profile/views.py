@@ -1,13 +1,22 @@
 from django.shortcuts import render
 
+from interessante.models import InteressanteOrte
+from prufung.models import PrufungModels
+from unterlagen.models import UnterlagenModel
+
 
 def profile(request):
     """ Функия прфиля пользывателя """
     template = 'user_profile/user_profile.html'
+    orte = InteressanteOrte.objects.all()
+    papiers = UnterlagenModel.objects.all()
+    examens = PrufungModels.objects.all()
     context = {
-
+        'orte': orte,
+        'papiers': papiers,
+        'examens': examens,
     }
-    return render(request, template)
+    return render(request, template, context)
 
 
 def add_unterlagen(request):
