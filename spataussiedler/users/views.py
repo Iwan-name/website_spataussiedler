@@ -1,10 +1,11 @@
-from django.contrib.auth.forms import UserCreationForm
-from django.shortcuts import render, redirect
 from django.contrib.auth import logout, authenticate, login
-from .forms import LoginForm, SignUpForm
+from django.shortcuts import render, redirect
+
+from .forms import SignUpForm
 
 
 def signup(request):
+    """ Функция регистрации на сайте """
     form = SignUpForm()
     context = {
         'form': form,
@@ -15,8 +16,6 @@ def signup(request):
         if form.is_valid():
             user = form.save(commit=False)
             user.username = user.username.lower()
-            # username = form.cleaned_data.get('username')
-            # password1 = form.cleaned_data.get('password1')
             user.save()
             login(request, user)
             return redirect('index')
@@ -26,36 +25,36 @@ def signup(request):
 
 
 def user_login(request):
+    """ Функция для входа в учетную запись """
     tit = 'Вход на сайт'
-
     template = 'users/login.html'
     context = {
         'tit': tit,
+        'error': 'Неверные учетные данные',
     }
     if request.method == 'POST':
-        print(1)
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
-        print(request.user.username)
         if user is not None:
-            print(2)
             login(request, user)
             return redirect('index')
         else:
-            print(3)
-            return render(request, 'users/login.html', {'error': 'Неверные учетные данные'})
-
+            return render(request, 'users/login.html', context)
     else:
-        print(4)
         return render(request, template, context)
 
 
 def logout_view(request):
+    """ Функция выхода из учетной записи """
     logout(request)
     return redirect('logout_page')
 
 
 def logout_page(request):
+    """ Функция отрисовки шаблона logout.html после выхода из учетной записи"""
     template = 'users/logout.html'
     return render(request, template)
+
+
+

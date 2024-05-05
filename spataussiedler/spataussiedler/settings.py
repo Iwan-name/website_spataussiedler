@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'kontakte.apps.KontakteConfig',
     'interessante.apps.InteressanteConfig',
     'umzug.apps.UmzugConfig',
+    'user_profile.apps.UserProfileConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

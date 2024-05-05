@@ -1,0 +1,209 @@
+<!-- Шаблон Профиля посетителя -->
+{% extends 'base.html' %}
+
+{% block title %} Ваш профиль {% endblock %}
+
+{% block content %}
+<body>
+{% load static %}
+<div class="container pt-5">
+    <div class="row justify-content-between">
+        <div class="col">
+            {% include 'includes/hauptaufschrift.html' %}
+        </div>
+        {% include 'includes/abzeichen.html' %}
+    </div>
+</div>
+{% include 'includes/nav.html' %}
+<!-- END nav -->
+
+<section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/prof.jpg' %});"
+         data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/">Домашняя страница <i
+                        class="ion-ios-arrow-forward"></i></a></span> <span>Ваш профиль <i
+                        class="ion-ios-arrow-forward"></i></span></p>
+                {% if request.user.is_authenticated %}
+                <h1 class="mb-0 bread">Это ваш профиль {{ user }}</h1>
+                {% else %}
+                <h1 class="mb-0 bread">Надо зарегистрироваться {{ user }}</h1>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+<!--<section>-->
+<!--    {% if request.user.is_authenticated %}-->
+<!--    <h1 class="mb-0 bread">Privet {{ user }}</h1>-->
+<!--    {% else %}-->
+<!--    <h2>зарегся {{ user }}</h2>-->
+<!--    {% endif %}-->
+<!--</section>-->
+<section class="ftco-section ">
+    <div class="container">
+        <div class="row d-flex no-gutters">
+            <div class="col-md-6 d-flex">
+                <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-end"
+                     style="background-image:url({% static 'images/about.jpg' %});">
+                </div>
+            </div>
+            <div class="col-md-6 pl-md-5">
+                <div class="row justify-content-start py-5">
+                    <div class="col-md-12 heading-section ftco-animate pl-md-4 py-md-4">
+                        <span class="subheading">Добро пожаловать в свой профиль</span>
+                        <h2 class="mb-4">Поделись своим опытам и эмоциями</h2>
+                        <p>Добавь пост, который поможет другим людям</p>
+                        <div class="tabulation-2 mt-4">
+                            <ul class="nav nav-pills ">
+
+                                <li class="nav-item ">
+                                    <a class="nav-link active py-2" data-toggle="tab" href="#home1">Our Mission</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link py-2 mb-md-0 mb-2" data-toggle="tab" href="#home3">Our Value</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link py-2" data-toggle="tab" href="#home2">Our Vision</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link py-2 mb-md-0 mb-2" data-toggle="tab" href="#home3">Our Value</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content bg-light rounded mt-2">
+                                <div class="tab-pane container p-0 active" id="home1">
+                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and
+                                        Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
+                                        right at the coast of the Semantics, a large language ocean. Separated they live
+                                        in Bookmarksgrove right at the coast of the Semantics, a large language
+                                        ocean.</p>
+                                </div>
+                                <div class="tab-pane container p-0 fade" id="home2">
+                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and
+                                        Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
+                                        right at the coast of the Semantics, a large language ocean. Separated they live
+                                        in Bookmarksgrove right at the coast of the Semantics, a large language
+                                        ocean.</p>
+                                </div>
+                                <div class="tab-pane container p-0 fade" id="home3">
+                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and
+                                        Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
+                                        right at the coast of the Semantics, a large language ocean. Separated they live
+                                        in Bookmarksgrove right at the coast of the Semantics, a large language
+                                        ocean.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--<section class="ftco-section">-->
+<!--    <div class="container">-->
+<!--        <div class="row d-flex">-->
+<!--            {% for examen in examens %}-->
+<!--            <div class="col-md-4 d-flex ftco-animate">-->
+<!--                <div class="blog-entry align-self-stretch">-->
+<!--                    <a href="blog-single.html" class="block-20 rounded"-->
+<!--                       style="background-image: url({{ examen.bild.url }});">-->
+<!--                    </a>-->
+
+<!--                    <div class="text mt-3 text-center">-->
+<!--                        <div class="meta mb-2">-->
+<!--                            <div><a href="#">{{ examen.pub_date }}</a></div>-->
+<!--                            <div><a href="#">{{ examen.autor }}</a></div>-->
+<!--                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>-->
+<!--                        </div>-->
+<!--                        <h3 class="heading"><a href="#">{{ examen.name }}</a></h3>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            {% endfor %}-->
+<!--        </div>-->
+
+<!--&lt;!&ndash;        <div class="row mt-5">&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="col text-center">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="block-27">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <ul>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <li><a href="#">&lt;</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <li class="active"><span>1</span></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <li><a href="#">2</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <li><a href="#">3</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <li><a href="#">4</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <li><a href="#">5</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <li><a href="#">&gt;</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--    </div>-->
+<!--</section>-->
+<!--<section class="ftco-section">-->
+<!--    <div class="container">-->
+<!--        <div class="row justify-content-center">-->
+<!--            <div class="col-md-12">-->
+<!--                <div class="wrapper">-->
+<!--                    <div class="row no-gutters mb-5">-->
+
+<!--                        <div class="contact-wrap w-100 p-md-5 p-4">-->
+<!--                            <h3 class="mb-4">Поделись своим опытам сдачи экзамена</h3>-->
+<!--                            <div id="form-message-warning" class="mb-4"></div>-->
+<!--                            <div id="form-message-success" class="mb-4">-->
+<!--                                Опиши, какой сдавал экзамен и как, спасибо!-->
+<!--                            </div>-->
+<!--                            <form method="POST" id="contactForm" name="contactForm" class="contactForm"-->
+<!--                                  enctype="multipart/form-data">-->
+<!--                                {% csrf_token %}-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col-md-12">-->
+<!--                                        <div class="form-group">-->
+<!--                                            <label class="label" for="id_name">Како уровень экзамена?</label>-->
+<!--                                            <input type="text" class="form-control" name="name" id="id_name"-->
+<!--                                                   placeholder="А1-С2">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-12">-->
+<!--                                        <div class="form-group">-->
+<!--                                            <label class="label" for="id_beschreibung">Опиши как учил или как-->
+<!--                                                сдавал</label>-->
+<!--                                            <textarea name="beschreibung" class="form-control" id="id_beschreibung"-->
+<!--                                                      cols="30"-->
+<!--                                                      rows="4" placeholder="Текст описания"></textarea>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-12">-->
+<!--                                        <div class="form-group">-->
+<!--                                            <label class="label" for="id_file">Загрузи фото или файл</label>-->
+<!--                                            <input type="file" name="file" id="id_file"-->
+<!--                                                   placeholder="Фото или файл">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-12">-->
+<!--                                        <div class="form-group">-->
+<!--                                            <input type="submit" value="Опубликовать" class="btn btn-primary">-->
+<!--                                            <div class="submitting"></div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </form>-->
+<!--                        </div>-->
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+{% include 'includes/footer.html' %}
+
+<!-- loader -->
+{% include 'includes/loader.html' %}
+
+{% include 'includes/scripts.html' %}
+
+</body>
+{% endblock %}
