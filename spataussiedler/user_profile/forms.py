@@ -16,3 +16,5 @@ class PrufungForm(forms.ModelForm):
     class Meta:
         model = PrufungModels
         fields = ['name', 'beschreibung', 'file']
+
+
