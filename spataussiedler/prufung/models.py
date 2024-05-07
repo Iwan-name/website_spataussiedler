@@ -5,6 +5,7 @@ User = get_user_model()
 
 
 class PrufungModels(models.Model):
+    """ Модель для создания поста про экзамен """
     name = models.CharField(max_length=200)
     beschreibung = models.TextField()
     pub_date = models.DateTimeField(
@@ -17,3 +18,6 @@ class PrufungModels(models.Model):
         related_name='prufung'
     )
     file = models.FileField(upload_to='Prufung/')
+
+    class Meta:
+        verbose_name = 'Посты про экзамен'

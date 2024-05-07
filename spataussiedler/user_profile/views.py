@@ -1,14 +1,11 @@
 from django.shortcuts import render
-
-
+from interessante.models import InteressanteOrte
 from prufung.models import PrufungModels
 from unterlagen.models import UnterlagenModel
 
-from interessante.models import InteressanteOrte
+from .forms import UnterlagenForm, InteressanteHinzufugenForm, PrufungForm, UmzugForm
 
-from .forms import UnterlagenForm
-
-from .forms import PrufungForm
+TEMPLATE_ADD_OK = 'user_profile/user_profile.html'
 
 
 def profile(request):
@@ -37,7 +34,7 @@ def add_unterlagen(request):
             unterlag = form.save(commit=False)
             unterlag.autor = request.user
             unterlag.save()
-            return render(request, template, context)
+            return render(request, TEMPLATE_ADD_OK, context)
     else:
         form = UnterlagenForm()
     return render(request, template)
@@ -50,12 +47,12 @@ def add_prufung(request):
     context = {
         'form': form,
     }
-    if request.metod == 'POST':
+    if request.method == 'POST':
         if form.is_valid():
             pruf = form.save(commit=False)
-            pruf.author = request.user
+            pruf.autor = request.user
             pruf.save()
-            return render(request, template, context)
+            return render(request, TEMPLATE_ADD_OK, context)
     else:
         form = PrufungForm()
     return render(request, template, context)
@@ -64,16 +61,34 @@ def add_prufung(request):
 def add_interessante(request):
     """ Функция добавления поста про интересные места """
     template = 'user_profile/add_interessante.html'
+    form = InteressanteHinzufugenForm(request.POST, request.FILES)
     context = {
-
+        'form': form
     }
+    if request.method == 'POST':
+        if form.is_valid():
+            interessante = form.save(commit=False)
+            interessante.autor = request.user
+            interessante.save()
+            return render(request, TEMPLATE_ADD_OK, context)
+    else:
+        form = InteressanteHinzufugenForm()
     return render(request, template)
 
 
 def add_umzug(request):
     """ Функция добавления поста про переезд """
     template = 'user_profile/add_umzug.html'
+    form = UmzugForm(request.POST, request.FILES)
     context = {
-
+        'form': form,
     }
+    if request.method == 'POST':
+        if form.is_valid():
+            umzug = form.save(commit=False)
+            umzug.autor = request.user
+            umzug.save()
+            return render(request, TEMPLATE_ADD_OK, context)
+    else:
+        form = UnterlagenForm()
     return render(request, template)

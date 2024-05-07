@@ -5,6 +5,7 @@ User = get_user_model()
 
 
 class UnterlagenModel(models.Model):
+    """ Модель для создания постов про документы """
     name = models.CharField(max_length=200)
     beschreibung = models.TextField()
     pub_date = models.DateTimeField(
@@ -17,3 +18,6 @@ class UnterlagenModel(models.Model):
         related_name='unterlagen'
     )
     file = models.FileField(upload_to='Unterlagen/')
+
+    class Meta:
+        verbose_name = 'Посты про документы'

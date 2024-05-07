@@ -27,7 +27,7 @@ urlpatterns = [
     path('umzug', include('umzug.urls')),
     path('kontakte', include('kontakte.urls')),
     path('interessante', include('interessante.urls')),
-    path('profile', include('user_profile.urls')),
+    path('profile/', include('user_profile.urls')),
     path('auth/', include('users.urls')),
 ]
 if settings.DEBUG:

@@ -5,6 +5,7 @@ User = get_user_model()
 
 
 class InteressanteOrte(models.Model):
+    """ Модель для создания поста про интересные места """
     name = models.CharField(max_length=100)
     ortung = models.CharField(max_length=150)
     beschreibung = models.TextField()
@@ -14,3 +15,6 @@ class InteressanteOrte(models.Model):
         related_name='interessanteOrte'
     )
     bild = models.ImageField(upload_to='interessanteOrte/')
+
+    class Meta:
+        verbose_name = 'Посты про интересы'
