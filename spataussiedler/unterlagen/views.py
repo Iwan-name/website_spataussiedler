@@ -6,15 +6,15 @@ from .models import UnterlagenModel
 def unterlagen(request):
     """ Функция для страницы unterlagen(посты про документы) """
     template = 'unterlagen/unterlagen.html'
-    papiers = UnterlagenModel.objects.all()
+    posts = UnterlagenModel.objects.all()
     context = {
-        'papiers': papiers,
+        'posts': posts,
     }
     return render(request, template, context)
 
 
-def unterlagen_post_detail(request, pk):
-    post = get_object_or_404(UnterlagenModel, pk)
+def unterlagen_post_detail(request, post_id):
+    post = get_object_or_404(UnterlagenModel, id=post_id)
     context = {
         'post': post,
     }

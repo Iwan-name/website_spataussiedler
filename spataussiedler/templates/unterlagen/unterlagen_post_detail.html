@@ -1,8 +1,47 @@
-{% extends 'blog/base.html' %}
+{% extends 'base.html' %}
 
-{% block title %}{{ post.name }}{% endblock %}
+{% block title %} Документы {% endblock %}
 
 {% block content %}
-    <h2>{{ post.name }}</h2>
-    <p>{{ post.beschreibung }}</p>
+<body>
+{% load static %}
+<div class="container pt-5">
+    <div class="row justify-content-between">
+        <div class="col">
+            {% include 'includes/hauptaufschrift.html' %}
+        </div>
+        {% include 'includes/abzeichen.html' %}
+    </div>
+</div>
+{% include 'includes/nav.html' %}
+<!-- END nav -->
+
+<section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/unterlagen.jpg' %});"
+         data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/">Домашняя страница <i
+                        class="ion-ios-arrow-forward"></i></a></span> <span>Документы <i
+                        class="ion-ios-arrow-forward"></i></span></p>
+                <h1 class="mb-0 bread">Какие документы нужны при переезде и как их оформлять</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<h2>{{ post.name }}</h2>
+<p>{{ post.beschreibung }}</p>
+
+
+{% include 'includes/footer.html' %}
+
+
+<!-- loader -->
+{% include 'includes/loader.html' %}
+
+
+{% include 'includes/scripts.html' %}
+
+</body>
 {% endblock %}

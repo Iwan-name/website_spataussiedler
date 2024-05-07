@@ -34,7 +34,7 @@
 <section class="ftco-section">
     <div class="container">
         <div class="row d-flex">
-            {% for papier in papiers %}
+            {% for post in posts %}
             <div class="col-md-4 d-flex ftco-animate">
                 <div class="blog-entry align-self-stretch">
                     <a href="blog-single.html" class="block-20 rounded"
@@ -42,10 +42,10 @@
                     </a>
                     <div class="text mt-3 text-center">
                         <div class="meta mb-2">
-                            <div><a href="#">{{ papier.pub_date }}</a></div>
-                            <div><a href="#">{{ papier.autor }}</a></div>
+                            <div><a href="#">{{ post.pub_date }}</a></div>
+                            <div><a href="#">{{ post.autor }}</a></div>
                         </div>
-                        <h3 class="heading"><a href="#">{{ papier.name }}</a></h3>
+                        <h3 class="heading"><a href="{% url 'unterlagen_post_detail' post.id %}">{{ post.name }}</a></h3>
                     </div>
                 </div>
             </div>
@@ -69,61 +69,6 @@
         </div>
     </div>
 </section>
-<!--<section class="ftco-section">-->
-<!--    <div class="container">-->
-<!--        <div class="row justify-content-center">-->
-<!--            <div class="col-md-12">-->
-<!--                <div class="wrapper">-->
-<!--                    <div class="row no-gutters mb-5">-->
-
-<!--                        <div class="contact-wrap w-100 p-md-5 p-4">-->
-<!--                            <h3 class="mb-4">Поделись своим опытам по сбору документов!</h3>-->
-<!--                            <div id="form-message-warning" class="mb-4"></div>-->
-<!--                            <div id="form-message-success" class="mb-4">-->
-<!--                                Опиши что и как Ты делал, спасибо!-->
-<!--                            </div>-->
-<!--                            <form method="POST" action="{% url 'unterlagen' %}" id="contactForm" name="contactForm" class="contactForm"-->
-<!--                                  enctype="multipart/form-data">-->
-<!--                                {% csrf_token %}-->
-<!--                                <div class="row">-->
-<!--                                    <div class="col-md-12">-->
-<!--                                        <div class="form-group">-->
-<!--                                            <label class="label" for="id_name">Наименование документа</label>-->
-<!--                                            <input type="text" class="form-control" name="name" id="id_name"-->
-<!--                                                   placeholder="Название">-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <div class="col-md-12">-->
-<!--                                        <div class="form-group">-->
-<!--                                            <label class="label" for="id_beschreibung">Опиши как и зачем получать документ</label>-->
-<!--                                            <textarea name="beschreibung" class="form-control" id="id_beschreibung"-->
-<!--                                                      cols="30"-->
-<!--                                                      rows="4" placeholder="Текст описания"></textarea>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                     <div class="col-md-12">-->
-<!--                                        <div class="form-group">-->
-<!--                                            <label class="label" for="id_file">Загрузи фото или файл</label>-->
-<!--                                            <input type="file"  name="file" id="id_file"-->
-<!--                                                   placeholder="Фото или файл">-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <div class="col-md-12">-->
-<!--                                        <div class="form-group">-->
-<!--                                            <input type="submit" value="Опубликовать" class="btn btn-primary">-->
-<!--                                            <div class="submitting"></div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </form>-->
-<!--                        </div>-->
-
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
 {% include 'includes/footer.html' %}
 
 
